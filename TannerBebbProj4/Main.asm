@@ -1,4 +1,6 @@
 ;Tanner Bebb Assembly Language Project 4.
+;Source is the intial string that I want to convert. As it is getting converted it is storing that into a new varible called target.
+;Target is the variable that will be printed to the string.
 
 INCLUDE Irvine32.inc
 
