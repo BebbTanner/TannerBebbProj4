@@ -11,13 +11,13 @@ INCLUDE Irvine32.inc
 
     main PROC
         mov esi,0                                                                                   ;Move the value of 0 into the esi register.
-        mov edi,LENGTHOF source - 2                                                                 ;Move the lengthof source to the edi register.
-        mov ecx,SIZEOF source                                                                       ;Move the sizeof source to the ecx register.
+        mov edi,LENGTHOF source - 2                                                                 ;Move the length of the array source to the edi register.
+        mov ecx,SIZEOF source                                                                       ;Move the number of bytes that source uses to the ecx register.
     L1:
-        mov al,source[esi]                                                                          ;Move the memory address of source to the al register?
-        mov target[edi],al                                                                          ;Move the al register to the memory address of target?
-        inc esi                                                                                     ;Increment the esi register.
-        dec edi                                                                                     ;Decerment the edi register.
+        mov al,source[esi]                                                                          ;point to the value source in the esi register. Move that to the al register.
+        mov target[edi],al                                                                          ;Mov the al register to the value that is in the esi register called target.
+        inc esi                                                                                     ;Increment the esi register to move to the next letter in the string.
+        dec edi                                                                                     ;Decrement the edi register, this will help in finding the endpoint of the string.
         loop L1                                                                                     ;Loop back to the L1 tag.
         mov edx, OFFSET target                                                                      ;Move the address of the varible target to the edx register.
         call WriteString                                                                            ;Write the string that is stored in the edx register.
